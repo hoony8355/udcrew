@@ -87,17 +87,21 @@
         animation-play-state: paused;
       }
     </style>
-  <script type="importmap">
+    <!-- Public CDN Import Map for external deployment compatibility -->
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-bg text-white antialiased overflow-x-hidden">
     <div id="root"></div>
+    <!-- Explicit entry point required for Vite/Vercel deployments -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
